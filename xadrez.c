@@ -5,6 +5,7 @@ int main() {
     printf("[1] Rainha\n");
     printf("[2] Torre\n");
     printf("[3] Bispo\n");
+    printf("[4] Cavalo\n");
     printf("Escolha um deles: ");
     scanf(" %d", &escolhaPeca);
     switch (escolhaPeca)
@@ -64,6 +65,32 @@ int main() {
         printf("Movendo o %s para %s e para a %s %d°\n",pecaEscolhida3, direcao3, posicao3, contagem3);
         contagem3++;
         }while( contagem3 <= casas3);
+            break;
+
+        case 4: 
+            int c = 1;
+            char sentidoCavalo[10];
+            char direcaoCavalo[10];
+            char ladoCavalo[10];
+            int contagemCavalo = 1;
+            printf("O cavalo anda em L, tendo dois sentidos, horizontal ou vertical. Escolha o sentido: ");
+            scanf(" %s", sentidoCavalo);
+
+            printf("Agora escolha a direção que o cavalo vai se mecher, CIMA | BAIXO | LADO DIREITO | LADO ESQUERDO: ");
+            scanf(" %s", direcaoCavalo);
+
+            printf("No final do L ele vai para um dos dois lados, esquerda ou direita. Escolha o lado: ");
+            scanf(" %s", ladoCavalo);
+
+            for(size_t i = 0; i < contagemCavalo; i++){
+                do{
+                    printf(" %s para %s - %d°\n", sentidoCavalo, direcaoCavalo, c);
+                    c++;
+                }while(c <= 2);
+                printf(" vai ficar na casa da %s", ladoCavalo);
+            }
+
+            
             break;
 
     default:
