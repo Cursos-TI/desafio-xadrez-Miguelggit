@@ -44,6 +44,7 @@ void recursivoBispo(int contagem){
         char pecaEscolhida3[10] = "Bispo";
         int casas3;
         char posicao3[20];
+        int c = 0;
         printf("A %s  Move-se na diagonal. Escolha a direcao(CIMA | BAIXO): ");
         scanf(" %s", direcao3);
         printf("Escolha o sentido(DIREITA | ESQUERDA): ");
@@ -52,10 +53,13 @@ void recursivoBispo(int contagem){
         scanf(" %d", &casas3);
         printf("A %s vai se mover na %s para a %s, andando %d casas\n", pecaEscolhida3, direcao3, posicao3, casas3);
 
-        if(contagem <= casas3){
-            printf("Movendo o %s para %s e para a %s %d°\n",pecaEscolhida3, direcao3, posicao3, contagem);
-            recursivoBispo(contagem + 1);
-        }
+        for(size_t i = 0; i <= casas3; i++){
+            do{
+                printf("O %s vai se mover para %s", pecaEscolhida3, direcao3);
+                c++;
+            }while(c < 1);
+           printf(" e para a %s %d° \n", posicao3, i);
+        }   
 }
 int main() {
     int escolhaPeca;
